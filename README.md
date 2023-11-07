@@ -72,6 +72,7 @@ Estamos dispostos a ouvir suas sugestões para o andamento das aulas e a interdi
 Tendo alguma outra demanda, entre em contato com os professores Adriano ou Luciano.
 
 [Adriano](adriano.melo@prof.sc.senac.br)
+
 [Luciano](luciano.kogut@prof.sc.senac.br)
 
 - [Visão Geral](#-índice)
