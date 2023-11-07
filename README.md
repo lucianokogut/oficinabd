@@ -22,13 +22,15 @@ Este projeto foi desenvolvido com base na Oficina de BD do professor Adriano de 
 
 * Java 17
 * Maven
+* MySQL 8.0
 * Hierarquia de Pacotes
 * Arquitetura MVC
 
 |LOGO           |STACK                              |FUNÇÃO                       |
 |---------------|-----------------------------------|-----------------------------|
-| ![Java 17](assets/java-logo-icon.png) | `Java 17` | Linguagem de programação escolhida para o desenvolvimento do Back-end da aplicação |
-| ![Maven](assets/apache-maven-icon.png) | `Maven 4.0` | Ferramenta de gerenciamento para o build de código-fonte (construção dos artefatos para sua execução), pois padroniza o gerenciamento de dependências, execução dos testes, build e deploy da aplicação |
+| ![Java 17](java-logo-icon.png) | `Java 17` | Linguagem de programação escolhida para o desenvolvimento do Back-end da aplicação |
+| ![Maven](apache-maven-icon.png) | `Maven 4.0` | Ferramenta de gerenciamento para o build de código-fonte (construção dos artefatos para sua execução), pois padroniza o gerenciamento de dependências, execução dos testes, build e deploy da aplicação |
+| ![MySQL 8.0](mysql-icon.png)  | `MySQL 8.0.32` | Gerenciador de Banco de Dados de código aberto |
 | ![Package Hierarchy](assets/img-hierarquia.png)  | `Hierarquia de Pacotes` | Organização dos diretórios (pastas do projeto) dentro de responsabilidades específicas para cada uma das entidades implementadas |
 
 - [Visão Geral](#-índice)
