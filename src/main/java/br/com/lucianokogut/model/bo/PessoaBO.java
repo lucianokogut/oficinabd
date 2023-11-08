@@ -1,11 +1,11 @@
 package br.com.lucianokogut.model.bo;
 
 import java.util.ArrayList;
-
+import br.com.lucianokogut.model.dao.PessoaDAO;
 import br.com.lucianokogut.model.vo.PessoaVO;
 
 public class PessoaBO {
-    
+
     public PessoaVO cadastrarPessoaBO(PessoaVO pessoaVO) {
         PessoaDAO pessoaDAO = new PessoaDAO();
         if (pessoaDAO.verificarCadastroPessoaBaseDadosDAO(pessoaVO)) {
@@ -64,6 +64,3 @@ public class PessoaBO {
         return pessoa;
     }
 }
-
-
-
