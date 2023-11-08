@@ -52,5 +52,12 @@ public class PessoaVO {
     public void setIdade(int idade) {
         this.idade = idade;
     }
-    
+
+    @Override
+    public String toString() {
+        return "Código da Pessoa: " + this.getIdade()
+                + "\nNome: " + this.getNome()
+                + "\n CPF: " + this.getCpf()
+                + "\nIdade: " + this.getIdade();
+    }
 }
