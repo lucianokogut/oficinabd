@@ -22,7 +22,7 @@ public class PessoaBO {
 
     public boolean atualizarPessoaBO(PessoaVO pessoaVO) {
         boolean resultado = false;
-        PessoaDAO pessoaDAO = new PessoaDAO;
+        PessoaDAO pessoaDAO = new PessoaDAO();
         if (pessoaDAO.verificarCadastroPessoaBaseDadosDAO(pessoaVO)) {
             if (pessoaVO.getIdade() >= 18) {
                 resultado = pessoaDAO.atualizarPessoaDAO(pessoaVO);
