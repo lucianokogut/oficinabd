@@ -54,4 +54,26 @@ public class PessoaDAO {
         return pessoaVO;
     }
 
+    public boolean atualizarPessoaDAO(PessoaVO pessoaVO) {
+        String query = "UPDATE pessoa SET nome = '" + pessoaVO.getNome()
+        + "', cpf = '" + pessoaVO.getCpf()
+        + "', idade = " + pessoaVO.getIdade()
+        + " WHERE idpessoa = '" + pessoaVO.getIdPessoa();
+        Connection conn = Banco.getConnection();
+        Statement stmt = Banco.getStatement(conn);
+        boolean retorno = false;
+        try {
+            if (stmt.executeUpdate(query) == 1) {
+                retorno = true;
+            }
+        } catch (SQLException erro) {
+            System.out.println("\nErro ao executar a query do método atualizarPessoaDAO!")
+            System.out.println("\nErro: " + erro.getMessage());
+        } finally {
+            Banco.closeStatement(stmt);
+            Banco.closeConnection(conn);
+        }
+        return retorno;
+    }
+
 }
