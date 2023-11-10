@@ -21,7 +21,7 @@ Este projeto foi desenvolvido com base na Oficina de BD do professor Adriano de 
 ## 🛠 Tecnologias Utilizadas
 
 * Java 17
-* Maven
+* Maven 4.0
 * MySQL 8.0
 * Hierarquia de Pacotes
 * Arquitetura MVC
