@@ -44,7 +44,7 @@ Conceito relacionado ao conjunto de classes localizadas na mesma estrutura hier�
 .
 └── OFICINABD/
     ├── assets/
-    │   ├── docs/
+    │   └── docs/
     ├── src/
     │   ├── main/
     │   │   └── java/br/com/lucianokogut/
@@ -54,8 +54,7 @@ Conceito relacionado ao conjunto de classes localizadas na mesma estrutura hier�
     │   │       │   ├── dao
     │   │       │   └── vo
     │   │       ├── view
-    │   │       ├── Main.java
-    │   │       └── TodolistApplication.java
+    │   │       └── Main.java
     │   └── test
     ├── Dockerfile
     ├── pom.xml
