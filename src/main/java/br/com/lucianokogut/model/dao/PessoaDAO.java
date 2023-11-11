@@ -62,7 +62,7 @@ public class PessoaDAO {
         String query = "UPDATE pessoa SET nome = '" + pessoaVO.getNome()
                 + "', cpf = '" + pessoaVO.getCpf()
                 + "', idade = " + pessoaVO.getIdade()
-                + " WHERE idpessoa = '" + pessoaVO.getIdPessoa();
+                + " WHERE idpessoa = " + pessoaVO.getIdPessoa();
 
         Connection conn = Banco.getConnection();
         Statement stmt = Banco.getStatement(conn);
