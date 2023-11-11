@@ -13,8 +13,8 @@ public class Banco {
 	//private static final String DRIVER = "com.mysql.jdbc.Driver"; //MYSQL versão 5
 	private static final String BANCODADOS = "oficinabd";
 	private static final String CONEXAO = "jdbc:mysql://localhost:3306/" + BANCODADOS;
-	private static final String USER = "root";
-	private static final String PASSWORD = "";
+	private static final String USER = "oficina";
+	private static final String PASSWORD = "poo_bd";
 	
 	public static Connection getConnection(){
 		try {
