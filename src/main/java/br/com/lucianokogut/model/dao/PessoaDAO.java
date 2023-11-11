@@ -25,7 +25,7 @@ public class PessoaDAO {
             }
         } catch (SQLException erro) {
             System.out.println("\nErro ao executar a query do método verificarCadastroPessoaBaseDadosDAO!");
-            System.out.println("\nErro: " + erro.getMessage());
+            System.out.println("Erro: " + erro.getMessage());
         } finally {
             Banco.closeResultSet(resultado);
             Banco.closeStatement(stmt);
@@ -50,7 +50,7 @@ public class PessoaDAO {
             }
         } catch (SQLException erro) {
             System.out.println("\nErro ao executar a query do método cadastrarPessoaDAO!");
-            System.out.println("\nErro: " + erro.getMessage());
+            System.out.println("Erro: " + erro.getMessage());
         } finally {
             Banco.closeStatement(pstmt);
             Banco.closeConnection(conn);
@@ -73,7 +73,7 @@ public class PessoaDAO {
             }
         } catch (SQLException erro) {
             System.out.println("\nErro ao executar a query do método atualizarPessoaDAO!");
-            System.out.println("\nErro: " + erro.getMessage());
+            System.out.println("Erro: " + erro.getMessage());
         } finally {
             Banco.closeStatement(stmt);
             Banco.closeConnection(conn);
@@ -93,7 +93,7 @@ public class PessoaDAO {
             }
         } catch (SQLException erro) {
             System.out.println("\nErro ao executar a query do método atualizarPessoaDAO!");
-            System.out.println("\nErro: " + erro.getMessage());
+            System.out.println("Erro: " + erro.getMessage());
         } finally {
             Banco.closeStatement(stmt);
             Banco.closeConnection(conn);
@@ -120,7 +120,7 @@ public class PessoaDAO {
             }
         } catch (SQLException erro) {
             System.out.println("\nErro ao executar a query do método consultarTodasPessoasDAO!");
-            System.out.println("\nErro: " + erro.getMessage());
+            System.out.println("Erro: " + erro.getMessage());
         } finally {
             Banco.closeResultSet(resultado);
             Banco.closeStatement(stmt);
@@ -148,7 +148,7 @@ public class PessoaDAO {
             }
         } catch (SQLException erro) {
             System.out.println("\nErro ao executar a query do método consultarPessoaDAO!");
-            System.out.println("\nErro: " + erro.getMessage());
+            System.out.println("Erro: " + erro.getMessage());
         } finally {
             Banco.closeResultSet(resultado);
             Banco.closeStatement(stmt);
