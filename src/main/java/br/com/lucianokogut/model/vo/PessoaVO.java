@@ -57,7 +57,7 @@ public class PessoaVO {
     public String toString() {
         return "Código da Pessoa: " + this.getIdPessoa()
                 + "\nNome: " + this.getNome()
-                + "\n CPF: " + this.getCpf()
+                + "\nCPF: " + this.getCpf()
                 + "\nIdade: " + this.getIdade();
     }
 }
