@@ -8,6 +8,8 @@ public class Main {
 */
 package br.com.lucianokogut;
 
+import java.util.ArrayList;
+
 import br.com.lucianokogut.model.bo.PessoaBO;
 import br.com.lucianokogut.model.vo.PessoaVO;
 
@@ -109,5 +111,35 @@ public class Main {
 
         System.out.println("\n-----------------------------------\n");
 
+        // Consultar uma Pessoa (p) ou Todas (lista)
+
+        // Consultar uma pessoa OK
+        PessoaVO p1 = new PessoaVO(3, "", null, 0);
+        p1 = pessoaBO.consultarPessoaBO(p1);
+        if (p1.getCpf() != null) {
+            System.out.println(p1);
+        } else {
+            System.out.println("\nPessoa não localizada na Base de Dados...");
+        }
+
+        // Tentando consultar uma pessoa inexistente
+        PessoaVO p2 = new PessoaVO(100, "", null, 0);
+        p2 = pessoaBO.consultarPessoaBO(p2);
+        if (p2.getCpf() != null) {
+            System.out.println(p2);
+        } else {
+            System.out.println("\nPessoa não localizada na Base de Dados...");
+        }
+
+        // Consultar todas as pessoas e interar em uma lista
+        ArrayList<PessoaVO> lista = pessoaBO.consultarTodasPessoasBO();
+        if (lista.isEmpty()) {
+            System.out.println("\nNão existem pessoas cadastradas na Base de Dados...");
+        } else {
+            System.out.println("\nLista de Pessoas: \n");
+            for (PessoaVO p : lista) {
+                System.out.println(p + "\n");
+            }
+        }
     }
 }
