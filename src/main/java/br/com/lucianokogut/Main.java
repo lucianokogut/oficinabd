@@ -54,5 +54,41 @@ public class Main {
                 cp1.getIdPessoa() > 0 ? "Pessoa Cadastrada com Sucesso!!!" : "Houve um problema no Cadastro!!");
 
         System.out.println("\n-----------------------------------\n");
+
+        // Atualizar Pessoa (ap)
+
+        // Atualização OK
+        PessoaVO ap1 = new PessoaVO(1, "", "", 0);
+        ap1 = pessoaBO.consultarPessoaBO(ap1);
+        ap1.setIdade(ap1.getIdade() + 1);
+        boolean resultado = pessoaBO.atualizarPessoaBO(ap1);
+        System.out.println(
+                resultado ? "Pessoa Atualizada com Sucesso!!!" : "Houve um problema na Atualização!!");
+
+        // Tentando atualizar uma pessoa inexistente
+        PessoaVO ap2 = new PessoaVO(100, "", "", 0);
+        ap2 = pessoaBO.consultarPessoaBO(ap2);
+        ap2.setIdade(ap2.getIdade() + 1);
+        resultado = pessoaBO.atualizarPessoaBO(ap2);
+        System.out.println(
+                resultado ? "Pessoa Atualizada com Sucesso!!!" : "Houve um problema na Atualização!!");
+
+        // Tentando atualizar o CPF de uma pessoa para null
+        PessoaVO ap3 = new PessoaVO(2, "", "", 0);
+        ap3 = pessoaBO.consultarPessoaBO(ap3);
+        ap3.setCpf(null);
+        resultado = pessoaBO.atualizarPessoaBO(ap3);
+        System.out.println(
+                resultado ? "Pessoa Atualizada com Sucesso!!!" : "Houve um problema na Atualização!!");
+
+        // Tentando transformar uma pessoa em menor de idade
+        PessoaVO ap4 = new PessoaVO(2, "", "", 0);
+        ap4 = pessoaBO.consultarPessoaBO(ap4);
+        ap4.setIdade(10);
+        resultado = pessoaBO.atualizarPessoaBO(ap4);
+        System.out.println(
+                resultado ? "Pessoa Atualizada com Sucesso!!!" : "Houve um problema na Atualização!!");
+
+        System.out.println("\n-----------------------------------\n");
     }
 }
