@@ -55,7 +55,7 @@ public class PessoaVO {
 
     @Override
     public String toString() {
-        return "Código da Pessoa: " + this.getIdade()
+        return "Código da Pessoa: " + this.getIdPessoa()
                 + "\nNome: " + this.getNome()
                 + "\n CPF: " + this.getCpf()
                 + "\nIdade: " + this.getIdade();

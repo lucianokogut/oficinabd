@@ -5,12 +5,15 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+
 import br.com.lucianokogut.model.vo.PessoaVO;
 
 public class PessoaDAO {
 
     public boolean verificarCadastroPessoaBaseDadosDAO(PessoaVO pessoaVO) {
         String query = "SELECT cpf FROM pessoa WHERE cpf = '" + pessoaVO.getCpf() + "' ";
+
         Connection conn = Banco.getConnection();
         Statement stmt = Banco.getStatement(conn);
         ResultSet resultado = null;
@@ -33,6 +36,7 @@ public class PessoaDAO {
 
     public PessoaVO cadastrarPessoaDAO(PessoaVO pessoaVO) {
         String query = "INSERT INTO pessoa (nome, cpf, idade) VALUES (?, ?, ?)";
+
         Connection conn = Banco.getConnection();
         PreparedStatement pstmt = Banco.getPreparedStatementWithPk(conn, query);
         try {
@@ -59,6 +63,7 @@ public class PessoaDAO {
                 + "', cpf = '" + pessoaVO.getCpf()
                 + "', idade = " + pessoaVO.getIdade()
                 + " WHERE idpessoa = '" + pessoaVO.getIdPessoa();
+
         Connection conn = Banco.getConnection();
         Statement stmt = Banco.getStatement(conn);
         boolean retorno = false;
@@ -78,11 +83,12 @@ public class PessoaDAO {
 
     public boolean excluirPessoaDAO(PessoaVO pessoaVO) {
         String query = "DELETE FROM pessoa WHERE idpessoa = " + pessoaVO.getIdPessoa();
+
         Connection conn = Banco.getConnection();
         Statement stmt = Banco.getStatement(conn);
         boolean retorno = false;
         try {
-            if (stmt.executeUpdate(query) ==1) {
+            if (stmt.executeUpdate(query) == 1) {
                 retorno = true;
             }
         } catch (SQLException erro) {
@@ -96,20 +102,20 @@ public class PessoaDAO {
     }
 
     public ArrayList<PessoaVO> consultarTodasPessoasDAO() {
-        Connection conn = Banco.getConnection();
-        Statement stmt = Banco.getStatement();
-        ResultSet resultado = null;
-        ArrayList<PessoaVO> listaPessoas = new ArrayList<PessoaVO>;
         String query = "SELECT idpessoa, nome, cpf, idade FROM pessoa";
 
+        Connection conn = Banco.getConnection();
+        Statement stmt = Banco.getStatement(conn);
+        ResultSet resultado = null;
+        ArrayList<PessoaVO> listaPessoas = new ArrayList<PessoaVO>();
         try {
             resultado = stmt.executeQuery(query);
             while (resultado.next()) {
-                PessoaVO pessoa = new PessoaVO;
+                PessoaVO pessoa = new PessoaVO();
                 pessoa.setIdPessoa(Integer.parseInt(resultado.getString(1)));
                 pessoa.setNome(resultado.getString(2));
                 pessoa.setCpf(resultado.getString(3));
-                pessoa.setIdade(resultado.getString(4));
+                pessoa.setIdade(resultado.getInt(4));
                 listaPessoas.add(pessoa);
             }
         } catch (SQLException erro) {
@@ -124,21 +130,21 @@ public class PessoaDAO {
     }
 
     public PessoaVO consultarPessoaDAO(PessoaVO pessoaVO) {
-        Connection conn = Banco.getConnection();
-        Statement stmt = Banco.getStatement();
-        ResultSet resultado = null;
-        ArrayList<PessoaVO> listaPessoas = new ArrayList<PessoaVO>;
         String query = "SELECT idpessoa, nome, cpf, idade "
-        + "FROM pessoa "
-        + "WHERE idpessoa = " + pessoaVO.getIdPessoa();
+                + "FROM pessoa "
+                + "WHERE idpessoa = " + pessoaVO.getIdPessoa();
+
+        Connection conn = Banco.getConnection();
+        Statement stmt = Banco.getStatement(conn);
+        ResultSet resultado = null;
+        PessoaVO pessoa = new PessoaVO();
         try {
             resultado = stmt.executeQuery(query);
-            while (resultado.next()) {
-                PessoaVO pessoa = new PessoaVO;
+            if (resultado.next()) {
                 pessoa.setIdPessoa(Integer.parseInt(resultado.getString(1)));
                 pessoa.setNome(resultado.getString(2));
                 pessoa.setCpf(resultado.getString(3));
-                pessoa.setIdade(resultado.getString(4));
+                pessoa.setIdade(resultado.getInt(4));
             }
         } catch (SQLException erro) {
             System.out.println("\nErro ao executar a query do método consultarPessoaDAO!");
