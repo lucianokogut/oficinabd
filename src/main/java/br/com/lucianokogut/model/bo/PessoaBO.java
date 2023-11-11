@@ -48,7 +48,7 @@ public class PessoaBO {
 
     public ArrayList<PessoaVO> consultarTodasPessoasBO() {
         PessoaDAO pessoaDAO = new PessoaDAO();
-        ArrayList<PessoaVO> listaPessoasDAO = pessoaDAO.consultarTodasPessoasDAO();
+        ArrayList<PessoaVO> listaPessoasVO = pessoaDAO.consultarTodasPessoasDAO();
         if (listaPessoasVO.isEmpty()) {
             System.out.println("\nA Lista de Pessoas está vazia...");
         }
