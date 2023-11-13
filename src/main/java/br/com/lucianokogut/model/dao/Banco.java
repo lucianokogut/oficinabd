@@ -8,20 +8,30 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class Banco {
+
+	private static final String DRIVER = "com.mysql.cj.jdbc.Driver"; // MYSQL versão 8
+	// private static final String DRIVER = "com.mysql.jdbc.Driver"; //MYSQL versão 5
+	private static final String BANCODADOS = "bancodadostal";
+	private static final String ENDERECO = "localhost"; // Endereço de loopback da própria placa de rede
+	// private static final String ENDERECO = "127.0.0.1"; //Endereço de rede da
+	// própria placa de rede (IP de Loopback)
 	
-	private static final String DRIVER = "com.mysql.cj.jdbc.Driver"; //MYSQL versão 8
-	//private static final String DRIVER = "com.mysql.jdbc.Driver"; //MYSQL versão 5
-	private static final String BANCODADOS = "oficinabd";
-	private static final String ENDERECO = "localhost"; //Endereço de loopback da própria placa de rede
-	//private static final String ENDERECO = "127.0.0.1"; //Endereço de rede da própria placa de rede
-	//private static final String ENDERECO = "192.168.0.19"; //Endereço de rede de outra máquina na rede interna
-	//private static final String ENDERECO = "52.91.67.246"; //Endereço de rede de outra máquina em rede externa
-	//private static final String ENDERECO = "ls-fac9769ccecf2d64947cb825ac2a224c3f6b72a7.cki1j2magdpq.us-east-1.rds.amazonaws.com"; //Endereço de DNS para uma instância em nuvem
-	private static final String CONEXAO = "jdbc:mysql://" + ENDERECO + ":3306/" + BANCODADOS;
-	private static final String USER = "oficina";
-	private static final String PASSWORD = "poo_bd";
-	
-	public static Connection getConnection(){
+	// private static final String ENDERECO = "192.168.0.19"; //Endereço de rede de
+	// outra máquina na rede interna (LAN)
+
+	// private static final String ENDERECO = "52.91.67.246"; //Endereço de rede de
+	// outra máquina em rede externa (WAN)
+
+	// private static final String ENDERECO =
+	// "ls-dbc9869ccfce2d64047cb125ac2a234c3f6b76b7.cki3j5maddog.us-east-1.rds.amazonaws.com";
+	// //Endereço de DNS para uma instância em nuvem
+
+	private static final String PORTABD = "3306";
+	private static final String CONEXAO = "jdbc:mysql://" + ENDERECO + ":" + PORTABD + "/" + BANCODADOS;
+	private static final String USER = "usuariotal";
+	private static final String PASSWORD = "senhatal";
+
+	public static Connection getConnection() {
 		try {
 			Connection conn = null;
 			Class.forName(DRIVER);
@@ -37,19 +47,19 @@ public class Banco {
 			return null;
 		}
 	}
-	
-	public static void closeConnection(Connection conn){
+
+	public static void closeConnection(Connection conn) {
 		try {
-			if(conn != null){
+			if (conn != null) {
 				conn.close();
 			}
 		} catch (SQLException e) {
 			System.out.println("Problema no fechamento da conexão.");
 			System.out.println("Erro: " + e.getMessage());
-		}	
+		}
 	}
-	
-	public static Statement getStatement(Connection conn){
+
+	public static Statement getStatement(Connection conn) {
 		try {
 			Statement stmt = conn.createStatement();
 			return stmt;
@@ -59,19 +69,19 @@ public class Banco {
 			return null;
 		}
 	}
-		
-	public static void closeStatement(Statement stmt){
+
+	public static void closeStatement(Statement stmt) {
 		try {
-			if(stmt != null){
+			if (stmt != null) {
 				stmt.close();
 			}
 		} catch (SQLException e) {
 			System.out.println("Problema no fechamento do Statement.");
 			System.out.println("Erro: " + e.getMessage());
-		}	
+		}
 	}
-	
-	public static PreparedStatement getPreparedStatement(Connection conn, String sql){
+
+	public static PreparedStatement getPreparedStatement(Connection conn, String sql) {
 		try {
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			return stmt;
@@ -81,8 +91,8 @@ public class Banco {
 			return null;
 		}
 	}
-	
-	public static PreparedStatement getPreparedStatementWithPk(Connection conn, String sql){
+
+	public static PreparedStatement getPreparedStatementWithPk(Connection conn, String sql) {
 		try {
 			PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 			return stmt;
@@ -93,20 +103,20 @@ public class Banco {
 		}
 	}
 
-	public static void closePreparedStatement(Statement stmt){
+	public static void closePreparedStatement(Statement stmt) {
 		try {
-			if(stmt != null){
+			if (stmt != null) {
 				stmt.close();
 			}
 		} catch (SQLException e) {
 			System.out.println("Problema no fechamento do PreparedStatement.");
 			System.out.println("Erro: " + e.getMessage());
-		}	
+		}
 	}
-	
-	public static void closeResultSet(ResultSet result){
+
+	public static void closeResultSet(ResultSet result) {
 		try {
-			if(result != null){
+			if (result != null) {
 				result.close();
 			}
 		} catch (SQLException e) {
