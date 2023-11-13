@@ -12,7 +12,12 @@ public class Banco {
 	private static final String DRIVER = "com.mysql.cj.jdbc.Driver"; //MYSQL versão 8
 	//private static final String DRIVER = "com.mysql.jdbc.Driver"; //MYSQL versão 5
 	private static final String BANCODADOS = "oficinabd";
-	private static final String CONEXAO = "jdbc:mysql://localhost:3306/" + BANCODADOS;
+	private static final String ENDERECO = "localhost"; //Endereço de loopback da própria placa de rede
+	//private static final String ENDERECO = "127.0.0.1"; //Endereço de rede da própria placa de rede
+	//private static final String ENDERECO = "192.168.0.19"; //Endereço de rede de outra máquina na rede interna
+	//private static final String ENDERECO = "52.91.67.246"; //Endereço de rede de outra máquina em rede externa
+	//private static final String ENDERECO = "ls-fac9769ccecf2d64947cb825ac2a224c3f6b72a7.cki1j2magdpq.us-east-1.rds.amazonaws.com"; //Endereço de DNS para uma instância em nuvem
+	private static final String CONEXAO = "jdbc:mysql://" + ENDERECO + ":3306/" + BANCODADOS;
 	private static final String USER = "oficina";
 	private static final String PASSWORD = "poo_bd";
 	
