@@ -31,9 +31,9 @@ Este projeto foi desenvolvido com base na Oficina de BD do professor Adriano de 
 |---------------|-----------------------------------|-----------------------------|
 | ![Java 17](assets/java-logo-icon.png) | `Java 17` | Linguagem de programação escolhida para o desenvolvimento do Back-end da aplicação |
 | ![Maven 4](assets/apache-maven-icon.png) | `Maven 4.0` | Ferramenta de gerenciamento para o build de código-fonte (construção dos artefatos para sua execução), pois padroniza o gerenciamento de dependências, a execução dos testes, o build e deploy da aplicação |
-| ![MySQL 8.0](assets/mysql-logo-icon.png)  | `MySQL 8.0.32` | Gerenciador de Banco de Dados de código aberto |
-| ![Package Hierarchy](assets/img-hierarquia.png)  | `Hierarquia de Pacotes` | Organização dos diretórios (pastas do projeto) dentro de responsabilidades específicas para cada uma das entidades implementadas |
-| ![Dotenv Java](assets/img-hierarquia.png)  | `Recurso para Variáveis de Ambiente` | Configuração dos recursos conforme necessidade de cada ambiente, a exemplo de Dev / Stage / Homolog / Prod. Projeto desenvolvido por cdimascio (GiHub) |
+| ![MySQL 8.0](assets/mysql-logo-icon.png) | `MySQL 8.0.32` | Gerenciador de Banco de Dados de código aberto |
+| ![Package Hierarchy](assets/img-hierarquia.png) | `Hierarquia de Pacotes` | Organização dos diretórios (pastas do projeto) dentro de responsabilidades específicas para cada uma das entidades implementadas |
+| ![Dotenv Java](assets/dotenv-java-logo.png) | `Recurso para Variáveis de Ambiente` | Configuração dos recursos conforme necessidade de cada ambiente, a exemplo de Dev / Stage / Homolog / Prod. Projeto open source e desenvolvido por Carmine DiMascio (https://github.com/cdimascio) |
 
 - [Visão Geral](#-índice)
 ---
