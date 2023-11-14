@@ -7,7 +7,7 @@ O objetivo deste projeto é apresentar a forma para o desenvolvimento de uma apl
 - [Visão Geral](#-índice)
 - [Tecnologias Utilizadas](#-tecnologias-utilizadas)
 - [Hierarquia de Pacotes](#hierarquia-de-pacotes)
-- [Contribuição](#🤝-contribuição)
+- [Contribuição](#-contribuição)
 
 ---
 
