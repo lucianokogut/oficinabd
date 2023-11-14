@@ -14,9 +14,14 @@ public class Banco {
 	
 	private static final String DRIVER = dotenv.get("DRIVER_MYSQL_8");
 	//private static final String DRIVER = dotenv.get("DRIVER_MYSQL_5");
-	private static final String BANCODADOS = dotenv.get("BANCODADOS");
-	private static final String ENDERECO = dotenv.get("ENDERECO");
-	// private static final String ENDERECO = "127.0.0.1"; //Endereço de rede da
+
+	//private static final String BANCODADOS = dotenv.get("BANCODADOS");
+	private static final String BANCODADOS = dotenv.get("BANCODADOS_CLOUD");
+
+	//private static final String ENDERECO = dotenv.get("ENDERECO");
+	private static final String ENDERECO = dotenv.get("ENDERECO_CLOUD");
+	
+	//private static final String ENDERECO = "127.0.0.1"; //Endereço de rede da
 	// própria placa de rede (IP de Loopback)
 	
 	// private static final String ENDERECO = "192.168.0.19"; //Endereço de rede de
@@ -33,8 +38,11 @@ public class Banco {
 
 	private static final String CONEXAO = "jdbc:mysql://" + ENDERECO + ":" + PORTABD + "/" + BANCODADOS;
 
-	private static final String USER = dotenv.get("USERBD");
-	private static final String PASSWORD = dotenv.get("USERPASS");
+	//private static final String USER = dotenv.get("USERBD");
+	private static final String USER = dotenv.get("USER_CLOUD");
+	
+	//private static final String PASSWORD = dotenv.get("USERPASS");
+	private static final String PASSWORD = dotenv.get("PASSWORD_CLOUD");
 
 	public static Connection getConnection() {
 		try {
