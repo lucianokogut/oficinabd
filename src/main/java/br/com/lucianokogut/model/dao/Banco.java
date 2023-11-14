@@ -1,5 +1,6 @@
 package br.com.lucianokogut.model.dao;
 
+import io.github.cdimascio.dotenv.Dotenv;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -9,10 +10,12 @@ import java.sql.Statement;
 
 public class Banco {
 
-	private static final String DRIVER = "com.mysql.cj.jdbc.Driver"; // MYSQL versão 8
-	// private static final String DRIVER = "com.mysql.jdbc.Driver"; //MYSQL versão 5
-	private static final String BANCODADOS = "bancodadostal";
-	private static final String ENDERECO = "localhost"; // Endereço de loopback da própria placa de rede
+	static final Dotenv dotenv = Dotenv.load();
+	
+	private static final String DRIVER = dotenv.get("DRIVER_MYSQL_8");
+	//private static final String DRIVER = dotenv.get("DRIVER_MYSQL_5");
+	private static final String BANCODADOS = dotenv.get("BANCODADOS");
+	private static final String ENDERECO = dotenv.get("ENDERECO");
 	// private static final String ENDERECO = "127.0.0.1"; //Endereço de rede da
 	// própria placa de rede (IP de Loopback)
 	
@@ -26,10 +29,12 @@ public class Banco {
 	// "ls-dbc9869ccfce2d64047cb125ac2a234c3f6b76b7.cki3j5maddog.us-east-1.rds.amazonaws.com";
 	// //Endereço de DNS para uma instância em nuvem
 
-	private static final String PORTABD = "3306";
+	private static final String PORTABD = dotenv.get("PORTABD");
+
 	private static final String CONEXAO = "jdbc:mysql://" + ENDERECO + ":" + PORTABD + "/" + BANCODADOS;
-	private static final String USER = "usuariotal";
-	private static final String PASSWORD = "senhatal";
+
+	private static final String USER = dotenv.get("USERBD");
+	private static final String PASSWORD = dotenv.get("USERPASS");
 
 	public static Connection getConnection() {
 		try {
