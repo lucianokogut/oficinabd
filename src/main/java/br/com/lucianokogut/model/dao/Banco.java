@@ -19,7 +19,8 @@ public class Banco {
 	private static final String BANCODADOS = dotenv.get("BANCODADOS_CLOUD");
 
 	//private static final String ENDERECO = dotenv.get("ENDERECO");
-	private static final String ENDERECO = dotenv.get("ENDERECO_CLOUD");
+	//private static final String ENDERECO = dotenv.get("ENDERECO_CLOUD");
+	private static final String ENDERECO = dotenv.get("ENDERECO_EXT");
 	
 	//private static final String ENDERECO = "127.0.0.1"; //Endereço de rede da
 	// própria placa de rede (IP de Loopback)
