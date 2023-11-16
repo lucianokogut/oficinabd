@@ -20,7 +20,6 @@ public class Main {
 
         // Cadastrar Pessoa (cp)
 
-        // Cadastro OK
         PessoaVO cp1 = new PessoaVO(0, "Adriano", "01234567899", 45);
         cp1 = pessoaBO.cadastrarPessoaBO(cp1);
         System.out.println(
@@ -49,6 +48,36 @@ public class Main {
         cp5 = pessoaBO.cadastrarPessoaBO(cp5);
         System.out.println(
                 cp5.getIdPessoa() > 0 ? "Pessoa Cadastrada com Sucesso!!!" : "Houve um problema no Cadastro!!");
+
+        // Cadastro OK
+        PessoaVO cp6 = new PessoaVO(0, "Vilmar", "01234567895", 42);
+        cp6 = pessoaBO.cadastrarPessoaBO(cp6);
+        System.out.println(
+                cp6.getIdPessoa() > 0 ? "Pessoa Cadastrada com Sucesso!!!" : "Houve um problema no Cadastro!!");
+
+        // Cadastro OK
+        PessoaVO cp7 = new PessoaVO(0, "Thayse", "01234567894", 35);
+        cp7 = pessoaBO.cadastrarPessoaBO(cp7);
+        System.out.println(
+                cp7.getIdPessoa() > 0 ? "Pessoa Cadastrada com Sucesso!!!" : "Houve um problema no Cadastro!!");
+
+        // Cadastro OK
+        PessoaVO cp8 = new PessoaVO(0, "Thais", "01234567893", 35);
+        cp8 = pessoaBO.cadastrarPessoaBO(cp8);
+        System.out.println(
+                cp8.getIdPessoa() > 0 ? "Pessoa Cadastrada com Sucesso!!!" : "Houve um problema no Cadastro!!");
+
+        // Três anos depois uma nova tentativa de cadastro para Menor de Idade foi feito
+        PessoaVO cp9 = new PessoaVO(0, "José", "01234567896", 18);
+        cp9 = pessoaBO.cadastrarPessoaBO(cp9);
+        System.out.println(
+                cp9.getIdPessoa() > 0 ? "Pessoa Cadastrada com Sucesso!!!" : "Houve um problema no Cadastro!!");
+
+        // CPF que era nulo via procedure do BD foi corrigida pelo usuário durante o cadastro
+        PessoaVO cp10 = new PessoaVO(0, "João", "01234567892", 25);
+        cp10 = pessoaBO.cadastrarPessoaBO(cp10);
+        System.out.println(
+                cp10.getIdPessoa() > 0 ? "Pessoa Cadastrada com Sucesso!!!" : "Houve um problema no Cadastro!!");
 
         // Tentando cadastrar uma pessoa já cadastrada
         cp1 = pessoaBO.cadastrarPessoaBO(cp1);
