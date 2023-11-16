@@ -63,6 +63,26 @@ Conceito relacionado ao conjunto de classes localizadas na mesma estrutura hier�
     └── README.md
 ```
 
+A separação das camadas e dos pacotes em uma hierarquia MVC seguem o fluxo indicado abaixo.
+
+![Fluxo Aplicação](assets/img-fluxo-aplicacao.png)
+
+Neste projeto estão em uso as sub-camadas do Model, para que sejam separadas as responsabilidades das classes:
+
+1. `VO` - Pacote que mantém todas as classes que representam uma entidade do banco de dados, como um espelhamento do objeto principal que será trafegado de uma camada para outra.
+
+2. `BO` - Pacote que mantém todas as classes que possuem as regras de negócios e interagem com os objetos trafegados, com o objetivo de validar todas as regras existentes para cada objeto.
+
+3. `DAO` - Pacote que mantém todas as classes que preparam as querys para cada um das operações do CRUD, que acessam o banco de dados e executam as rotinas SQL no DB.
+
+**As demais camadas do fluxo (View e Controller) serão utilizadas em projetos, que necessitem de um front-end acessando os dados desta parte da aplicação, que pode ser considerado um projeto inicial de back-end.**
+
+Os pacotes da camada de modelo possuem as seguintes funções:
+
+A camada VO representa as entidades (tabelas lá do banco de dados).
+A camada BO representa os serviços que serão desenvolvidos para validação dos dados.
+A camada DAO representa os repositórios que farão fisicamente o acesso ao BD, a persistência, a manipulação ou exclusão dos dados.
+
 Fonte: https://tree.nathanfriend.io/
 
 - [Visão Geral](#-índice)
