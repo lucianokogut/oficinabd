@@ -10,7 +10,6 @@ import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.PUT;
 import jakarta.ws.rs.Path;
-//import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 
@@ -35,16 +34,14 @@ public class PessoaRest {
 		return pessoaBO.consultarTodasPessoasBO();
 	}
 	
-/*
  	@GET
 	@Path("/pesquisar/{id}")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public PessoaVO consultarPessoaController(@PathParam("id") int id) {
+	public PessoaVO consultarPessoaController(PessoaVO pessoaVO) {
 		PessoaBO pessoaBO = new PessoaBO();
-		return pessoaBO.consultarPessoaBO(id);
+		return pessoaBO.consultarPessoaBO(pessoaVO);
 	}
-*/
 
 	@PUT
 	@Path("/atualizar")
